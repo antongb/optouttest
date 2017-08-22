@@ -1,1 +1,36 @@
-hello
+<html>
+<body>
+
+<div id="cre_1" style="position: relative; left: 0px; top:0px; margin:0; border:0; padding:0; width: 320px; height: 50px;">
+  <!-- creative will be here -->
+  <a href="https://doubleclick-ack.jp.cinarra.io:443/clk?ctid=8f876e010085010fx058973700000699b&cnrts=15ca435c966&cnrxid=5&cnrcid=11c3793cbd597a&cnrauc=WUCQ1wAEwIEKvSzWxAt9kg&cnrx=https%3A%2F%2Flp.ginza-calla.jp%2F64c%2F%3Futm_source%3Dcinarra%26utm_medium%3Ddisplay%26utm_campaign%3Dcinarra14%26utm_content%3Dkaisumuseigen_c" target="_blank">
+       <img src="https://creatives.cinarra.com/images/creatives/5000000081500588/320x50/e6877845-5271-4f01-8a28-a7e9838376e9.jpg" style="position: absolute; z-index:1; left: 0px; top:0px; margin:0; border:0; padding:0"/>
+  </a>
+  <!-- creative will be here -->
+<!-- optout icon -->
+<div id="cro" style="position:absolute; z-index:100; top:0px; bottom:auto; vertical-align:top; right:0px; left:auto;">
+  <span  style="width:19px; height:15px; z-index:200">
+      <img style="width:19px; height:15px; z-index:200;margin:0;padding:0; border:none; cursor: pointer;" src="cinarra_opt_out_small.png">
+  </span>
+  <a href="https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f" target="_blank" style="display:none;">
+      <img style="width:76px; height:15px; z-index:100; margin:0;padding:0; border:none; cursor: pointer;" src="cinarra_opt_out_big.png" >
+ </a>
+</div>
+ <script type="text/javascript">
+ (function()
+ {
+     var cro = document.getElementById('cro'),
+         collapsedIcon = cro.children[0],
+         expandedIcon = cro.children[1],
+         expanded = false,
+         timer,
+         tvs = () => { expanded = !expanded; collapsedIcon.style.display = !expanded?'block':'none'; expandedIcon.style.display= expanded?'block':'none'; };
+         collapsedIcon.onclick = () => { tvs(); timer = setTimeout(() => { tvs(); }, 3000);};
+         expandedIcon.onclick = () => { clearTimeout(timer);tvs(); };
+   })();
+   </script>
+<!-- optout icon -->
+</div>
+
+</body>
+</html>
