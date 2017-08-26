@@ -23,7 +23,6 @@
  {
   var collapsedIcon = document.getElementById('cro_small'),
     expandedIcon = document.getElementById('cro_large'),
-    timer,
     openIcon = function(){
       collapsedIcon.style.display = 'none';
       expandedIcon.style.display = 'block';
@@ -40,14 +39,13 @@
     };
     // direct onclick redirection for mobile devices
     collapsedIcon.ontouchend = function(){
+      collapsedIcon.onmouseenter = function(){};
       closeIcon();
-      setTimeout(function() {
-        window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", '_blank')
-      }, 0);
+      window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", '_blank')
     };
-    collapsedIcon.onclick = function() {
-      preventDefault();
-    }
+    // collapsedIcon.onclick = function() {
+    //   preventDefault();
+    // }
     // collapsedIcon.onclick = function(){
     //   closeIcon();
     //   window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", '_blank');
