@@ -9,22 +9,17 @@
   <!-- creative will be here -->
 <!-- optout icon -->
 <div id="cro" style="position:absolute; z-index:100; top:0px; bottom:auto; vertical-align:top; right:0px; left:auto;">
-  <!-- <span id="cro_small" style="width:20px; height:20px; z-index:200"> -->
-      <img id="cro_small" style="width:19px; height:15px; z-index:200;margin:0;padding:0; border:none; cursor: pointer;" src="cinarra_opt_out_small.png">
+    <img id="cro_small" style="width:19px; height:15px; z-index:200;margin:0;padding:0; border:none; cursor: pointer;" src="cinarra_opt_out_small.png">
       <!-- https://www.cinarra.com/cinarra_opt_out.png -->
-  <!-- </span> -->
-<!--   <div id="cro_large" style="width:76px; height:20px; z-index:100; margin:0;padding:0; border:none; cursor: pointer; display:none;"> -->
   <a href="https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f" target="_blank">
       <img id="cro_large" style="width:76px; height:15px; z-index:100; margin:0;padding:0; border:none; cursor: pointer; display:none;" src="cinarra_opt_out_big.png" >
   </a>
- <!-- </div> -->
 </div>
  <script type="text/javascript">
  (function()
  {
   var collapsedIcon = document.getElementById('cro_small'),
     expandedIcon = document.getElementById('cro_large'),
-    // touchScreen = false,
     timer,
     openIcon = function(){
       collapsedIcon.style.display = 'none';
@@ -43,13 +38,9 @@
       }, 3000);
     };
     expandedIcon.onclick = function(){
+      clearTimeout(timer);
       closeIcon();
     };
-    // direct onclick redirection for mobile devices
-    // collapsedIcon.ontouchend = function(){
-    //   touchScreen = true;
-    //   window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", '_blank')
-    // };
   })();
   </script>
 <!-- optout icon -->
