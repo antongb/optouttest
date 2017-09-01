@@ -10,7 +10,6 @@
 <!-- optout icon -->
 <div id="cro" style="position:absolute; z-index:100; top:0px; bottom:auto; vertical-align:top; right:0px; left:auto;">
     <img id="cro_small" style="width:19px; height:15px; z-index:200;margin:0;padding:0; border:none; cursor: pointer;" src="cinarra_opt_out_small.png">
-      <!-- https://www.cinarra.com/cinarra_opt_out.png -->
   <a href="https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f" target="_blank">
       <img id="cro_large" style="width:76px; height:15px; z-index:100; margin:0;padding:0; border:none; cursor: pointer; display:none;" src="cinarra_opt_out_big.png" >
   </a>
@@ -36,14 +35,6 @@
     expandedIcon.onmouseleave = function(e){
       touchScreen ? e.preventDefault() : closeIcon();
     }
-    // collapsedIcon.onclick = function(e){
-      // prevent mouse event if user is using a touch pad device
-      // touchScreen === true ? e.preventDefault() : openIcon();
-      // openIcon();
-      // timer = setTimeout(function(){
-      //   closeIcon();
-      // }, 3000);
-    // };
     collapsedIcon.ontouchend = function(){
       touchScreen = true;
       openIcon();
@@ -52,19 +43,15 @@
       }, 3000);
     }
     expandedIcon.onclick = function(e){
-      touchScreen
-      ? e.preventDefault()
-      : window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", "_blank")
+      if(touchScreen){
+        e.preventDefault();
+      }
     }
     expandedIcon.ontouchend = function(){
-      // touchScreen = true;
       clearTimeout(timer);
       closeIcon();
+      window.open("https://www.cinarra.com/optout.html?cnropturl=https%3A%2F%2Fdoubleclick-ack.jp.cinarra.io%3A443%2Fopt%3Fappuid%3D5-3-AA395005-97A9-41D6-B39B-AC7B7D02AC37%26cnrcrid%3D11c3793cbd598f", "_blank");
     }
-    // expandedIcon.onclick = function(){
-    //   clearTimeout(timer);
-    //   closeIcon();
-    // };
   })();
   </script>
 <!-- optout icon -->
