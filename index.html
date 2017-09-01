@@ -21,6 +21,7 @@
   var collapsedIcon = document.getElementById('cro_small'),
     expandedIcon = document.getElementById('cro_large'),
     timer,
+    touchScreen = false,
     openIcon = function(){
       collapsedIcon.style.display = 'none';
       expandedIcon.style.display = 'block';
@@ -29,18 +30,28 @@
       collapsedIcon.style.display = 'block';
       expandedIcon.style.display = 'none';
     };
-    collapsedIcon.onclick = function(e){
+    collapsedIcon.onmouseenter = function(){
+      openIcon();
+    }
+    expandedIcon.onmouseleave = function(e){
+      touchScreen ? e.preventDefault() : closeIcon();
+    }
+    // collapsedIcon.onclick = function(e){
       // prevent mouse event if user is using a touch pad device
       // touchScreen === true ? e.preventDefault() : openIcon();
-      openIcon();
-      timer = setTimeout(function(){
-        closeIcon();
-      }, 3000);
-    };
-    expandedIcon.onclick = function(){
-      clearTimeout(timer);
+      // openIcon();
+      // timer = setTimeout(function(){
+      //   closeIcon();
+      // }, 3000);
+    // };
+    expandedIcon.ontouchend = function(){
+      touchScreen = true;
       closeIcon();
-    };
+    }
+    // expandedIcon.onclick = function(){
+    //   clearTimeout(timer);
+    //   closeIcon();
+    // };
   })();
   </script>
 <!-- optout icon -->
