@@ -44,8 +44,16 @@
       //   closeIcon();
       // }, 3000);
     // };
-    expandedIcon.ontouchend = function(){
+    collapsedIcon.ontouchend = function(){
       touchScreen = true;
+      openIcon();
+      timer = setTimeout(function(){
+        closeIcon();
+      }, 3000);
+    }
+    expandedIcon.ontouchend = function(){
+      // touchScreen = true;
+      clearTimeout(timer);
       closeIcon();
     }
     // expandedIcon.onclick = function(){
